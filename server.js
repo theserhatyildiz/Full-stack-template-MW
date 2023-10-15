@@ -7,14 +7,14 @@ const PORT = 8000
 
 let db,
     dbConnectionString = process.env.DB_STRING,
-    dbName = 'sample_mflix',
+    dbName = 'weight',
     collection
 
 MongoClient.connect(dbConnectionString)
     .then(client => {
         console.log(`Connected to Database`)
         db = client.db(dbName)
-        collection = db.collection('movies')
+        collection = db.collection('weights')
     })
 
 app.set('view engine', 'ejs')
